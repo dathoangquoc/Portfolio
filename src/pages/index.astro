@@ -1,5 +1,6 @@
 ---
-
+import "../styles/global.css";
+const pageTitle = "Dat";
 ---
 
 <html lang="en">
@@ -8,10 +9,106 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body>
-		<h1>Astro</h1>
-		<p>whatsup</p>
+
+	<body class="font-montserrat text-white">
+		<!-- Grid -->
+		<div class="grid grid-cols-4 gap-3 p-4 bg-black min-h-svh">
+			<!-- About -->
+			<div class="card bg-blue-100 row-span-2 gap-4">
+				<h1 class="text-7xl">I'm Dat!</h1>
+				<p class="text-sm">
+					I'm a passionate front-end developer helping professionals
+					and businesses establish their online presence.
+				</p>
+				<p class="text-sm">
+					Always up for new challenges that make a real impact! Let's
+					chat about your vision.
+				</p>
+			</div>
+
+			<!-- Eye catching -->
+			<!-- Need more letters, fade out later, fade in sooner -->
+			<div class="card bg-blue-200 col-span-2">
+				<div id="spiral" class="flex justify-around max-w-full"></div>
+			</div>
+
+			<!-- Language -->
+			<label class="swap swap-flip">
+				<!-- this hidden checkbox controls the state -->
+				<input type="checkbox" />
+
+				<div class="swap-on">
+					<div class="card bg-blue-300">
+						<div
+							class="text-8xl font-bold flex justify-center w-full"
+						>
+							VIE
+						</div>
+					</div>
+				</div>
+				<div class="swap-off">
+					<div class="card bg-blue-300">
+						<div
+							class="text-8xl font-bold flex justify-center w-full"
+						>
+							ENG
+						</div>
+					</div>
+				</div>
+			</label>
+
+			<!-- Tech Stack -->
+			<div class="card bg-blue-400">
+				<h1>Bleeding Edge Tech Stack</h1>
+				<!-- Icons -->
+				<div class="flex flex-row gap-2">
+					<img src="astro.svg" alt="astro logo" class="icon" />
+					<img src="tailwind.svg" alt="tailwind logo" class="icon" />
+				</div>
+			</div>
+
+			<!-- Work -->
+			<div class="card bg-blue-500 col-span-2 row-span-2">
+				<h1>Work</h1>
+				<!-- Projects -->
+				<h2>
+					<a href="" class="project">- Project 1</a>
+				</h2>
+				<h2>
+					<a href="" class="project">- Project 1</a>
+				</h2>
+				<h2>
+					<a href="" class="project">- Project 1</a>
+				</h2>
+			</div>
+
+			<!-- Contact -->
+			<div class="card bg-green-100 align-middle gap-4">
+				<h1>Got a project in mind?</h1>
+				<button type="button" class="btn">dathgqc@gmail.com</button>
+				<!-- Icons -->
+				<div class="flex flex-row gap-2">
+					<a href="https://github.com/dathoangquoc">
+						<img src="github2.svg" alt="github logo" class="icon" />
+					</a>
+					<a href="">
+						<img src="upwork.svg" alt="upwork logo" class="icon" />
+					</a>
+				</div>
+			</div>
+
+			<div class="card bg-green-200">
+				Check out how this website was made
+			</div>
+		</div>
+		<script src="../scripts/script.js"></script>
 	</body>
 </html>
