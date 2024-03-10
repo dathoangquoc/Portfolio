@@ -7,6 +7,10 @@
     bg-white/5 border border-white/10 relative overflow-hidden
 }
 
+.card * {
+    z-index: 1;
+}
+
 .card::after {
     content: "";
     position: absolute;
@@ -21,6 +25,7 @@
     );
     opacity: 0;
     transition: opacity 0.2s;
+    z-index: 0;
 }
 
 .card:hover::after {
