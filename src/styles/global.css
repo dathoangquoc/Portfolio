@@ -2,13 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    @apply font-montserrat 
-}
-
 .card {
     @apply rounded-3xl min-h-fit p-8 flex justify-around 
-    bg-white/10 border border-white/15 
+    bg-white/5 border border-white/10 relative overflow-hidden
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    height: 1000%;
+    width: 1000%;
+    left: calc(var(--x, 0) * 1px - 400px);
+    top: calc(var(--y, 0) * 1px - 400px);
+    background: radial-gradient(
+        800px circle at 400px 400px,
+        rgba(255, 255, 255, 0.1),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.card:hover::after {
+    opacity: 1;
 }
 
 .icon {
@@ -26,12 +42,8 @@ h1 {
 
 /* Animation */
 @keyframes spiral {
-    0% {
-        transform: translateY(0px) scale(1, 1);
-    }
-    
     25% {
-        transform: translateY(-50px) scale(0.35, 0.35);
+        transform: translateY(-60px) scale(0.35, 0.35);
     }
     
     35% {
@@ -47,49 +59,10 @@ h1 {
     }
 
     75% {
-        transform: translateY(50px) scale(0.35, 0.35);
-    }
-
-    100% {
-        transform: translateY(0px) scale(1, 1);
+        transform: translateY(60px) scale(0.35, 0.35);
     }
 }
 
 .spiralChar {
-    animation: spiral 5s 1s infinite linear normal;
+    animation: spiral 4s 1s infinite linear normal;
 }
-
-#spiral .spiralChar:nth-child(1) {
-    animation-delay: 1.2s;
-}
-#spiral .spiralChar:nth-child(2) {
-    animation-delay: 1.4s;
-}
-#spiral .spiralChar:nth-child(3) {
-    animation-delay: 1.6s;
-}
-#spiral .spiralChar:nth-child(4) {
-    animation-delay: 1.8s;
-}
-#spiral .spiralChar:nth-child(5) {
-    animation-delay: 2s;
-}
-#spiral .spiralChar:nth-child(6) {
-    animation-delay: 2.2s;
-}
-#spiral .spiralChar:nth-child(7) {
-    animation-delay: 2.4s;
-}
-#spiral .spiralChar:nth-child(8) {
-    animation-delay: 2.6s;
-}
-#spiral .spiralChar:nth-child(9) {
-    animation-delay: 2.8s;
-}
-#spiral .spiralChar:nth-child(10) {
-    animation-delay: 3s;
-}
-#spiral .spiralChar:nth-child(11) {
-    animation-delay: 3.2s;
-}
-

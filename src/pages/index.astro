@@ -20,10 +20,10 @@ const pageTitle = "Dat";
 
 	<body class="font-montserrat text-white">
 		<!-- Grid -->
-		<div class="grid grid-cols-4 gap-3 p-4 bg-black min-h-svh">
+		<div class="grid grid-cols-4 gap-3 p-4 bg-[#0a0e0b] min-h-svh">
 			<!-- About -->
 			<div class="card bg-blue-100 row-span-2 gap-4">
-				<h1 class="text-7xl">I'm Dat!</h1>
+				<h1 class="text-7xl" id="name">I'm Dat!</h1>
 				<p class="text-sm">
 					I'm a passionate front-end developer helping professionals
 					and businesses establish their online presence.
@@ -35,9 +35,19 @@ const pageTitle = "Dat";
 			</div>
 
 			<!-- Eye catching -->
-			<!-- Need more letters, fade out later, fade in sooner -->
 			<div class="card bg-blue-200 col-span-2">
-				<div id="spiral" class="flex justify-around max-w-full"></div>
+				<div class="grid grid-cols-1">
+					<div
+						id="spiral"
+						class="flex justify-center gap-1 max-w-full row-start-1 col-start-1"
+					>
+					</div>
+					<div
+						id="spiral2"
+						class="flex justify-center gap-1 max-w-full row-start-1 col-start-1"
+					>
+					</div>
+				</div>
 			</div>
 
 			<!-- Language -->
@@ -75,9 +85,9 @@ const pageTitle = "Dat";
 				</div>
 			</div>
 
-			<!-- Work -->
+			<!-- Selected Work -->
 			<div class="card bg-blue-500 col-span-2 row-span-2">
-				<h1>Work</h1>
+				<h1>Selected Work</h1>
 				<!-- Projects -->
 				<h2>
 					<a href="" class="project">- Project 1</a>
