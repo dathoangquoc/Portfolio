@@ -1,124 +1,99 @@
 ---
-import "../styles/global.css";
-const pageTitle = "Dat";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
+<MainLayout>
+	<!-- Grid -->
+	<div class="grid grid-cols-4 gap-3 p-4 bg-[#0a0e0b] h-screen">
+		<!-- About -->
+		<div class="card row-span-2 gap-4">
+			<h1 class="text-8xl font-normal" id="name">Dat Hoang</h1>
+			<p class="text-4xl font-heming text-end">front-end developer</p>
+			<p class="">
+				Helping professionals and businesses establish their online
+				presence.
+			</p>
+		</div>
 
-	<body class="font-montserrat text-white">
-		<!-- Grid -->
-		<div class="grid grid-cols-4 gap-3 p-4 bg-[#0a0e0b] min-h-svh">
-			<!-- About -->
-			<div class="card bg-blue-100 row-span-2 gap-4">
-				<h1 class="text-7xl" id="name">I'm Dat!</h1>
-				<p class="text-sm">
-					I'm a passionate front-end developer helping professionals
-					and businesses establish their online presence.
-				</p>
-				<p class="text-sm">
-					Always up for new challenges that make a real impact! Let's
-					chat about your vision.
-				</p>
-			</div>
-
-			<!-- Eye catching -->
-			<div class="card bg-blue-200 col-span-2">
-				<div class="grid grid-cols-1">
-					<div
-						id="spiral"
-						class="flex justify-center gap-1 max-w-full row-start-1 col-start-1"
-					>
-					</div>
-					<div
-						id="spiral2"
-						class="flex justify-center gap-1 max-w-full row-start-1 col-start-1"
-					>
-					</div>
+		<!-- Eye catching -->
+		<div class="card col-span-2">
+			<div class="grid grid-cols-1 align-middle min-h-full">
+				<div
+					id="spiral"
+					class="flex justify-around gap-1 max-w-full row-start-1 col-start-1"
+				>
 				</div>
-			</div>
-
-			<!-- Language -->
-			<label class="swap swap-flip">
-				<!-- this hidden checkbox controls the state -->
-				<input type="checkbox" />
-
-				<div class="swap-on">
-					<div class="card bg-blue-300">
-						<div
-							class="text-8xl font-bold flex justify-center w-full"
-						>
-							VIE
-						</div>
-					</div>
+				<div
+					id="spiral2"
+					class="flex justify-around gap-1 max-w-full row-start-1 col-start-1"
+				>
 				</div>
-				<div class="swap-off">
-					<div class="card bg-blue-300">
-						<div
-							class="text-8xl font-bold flex justify-center w-full"
-						>
-							ENG
-						</div>
-					</div>
-				</div>
-			</label>
-
-			<!-- Tech Stack -->
-			<div class="card bg-blue-400">
-				<h1>Bleeding Edge Tech Stack</h1>
-				<!-- Icons -->
-				<div class="flex flex-row gap-2">
-					<img src="astro.svg" alt="astro logo" class="icon" />
-					<img src="tailwind.svg" alt="tailwind logo" class="icon" />
-				</div>
-			</div>
-
-			<!-- Selected Work -->
-			<div class="card bg-blue-500 col-span-2 row-span-2">
-				<h1>Selected Work</h1>
-				<!-- Projects -->
-				<h2>
-					<a href="" class="project">- Project 1</a>
-				</h2>
-				<h2>
-					<a href="" class="project">- Project 1</a>
-				</h2>
-				<h2>
-					<a href="" class="project">- Project 1</a>
-				</h2>
-			</div>
-
-			<!-- Contact -->
-			<div class="card bg-green-100 align-middle gap-4">
-				<h1>Got a project in mind?</h1>
-				<button type="button" class="btn">dathgqc@gmail.com</button>
-				<!-- Icons -->
-				<div class="flex flex-row gap-2">
-					<a href="https://github.com/dathoangquoc" target="_blank">
-						<img src="github2.svg" alt="github logo" class="icon" />
-					</a>
-					<a href="" target="_blank">
-						<img src="upwork.svg" alt="upwork logo" class="icon" />
-					</a>
-				</div>
-			</div>
-
-			<div class="card bg-green-200">
-				Check out how this website was made
 			</div>
 		</div>
-		<script src="../scripts/script.js"></script>
-	</body>
-</html>
+
+		<!-- Language -->
+		<label class="swap swap-flip">
+			<!-- this hidden checkbox controls the state -->
+			<input type="checkbox" />
+
+			<div class="swap-on">
+				<div class="card">
+					<div class="text-4xl flex justify-center">vie</div>
+				</div>
+			</div>
+			<div class="swap-off">
+				<div class="card">
+					<div class="text-4xl flex justify-center">eng</div>
+				</div>
+			</div>
+		</label>
+
+		<!-- Contact -->
+		<div class="card align-middle gap-4">
+			<h1 class="text-4xl">Got a project in mind?</h1>
+			<button type="button" class="btn">dathgqc@gmail.com</button>
+			<!-- Icons -->
+			<div class="flex flex-row gap-2">
+				<a href="https://github.com/dathoangquoc" target="_blank">
+					<img src="github2.svg" alt="github logo" class="icon" />
+				</a>
+				<a href="" target="_blank">
+					<img src="upwork.svg" alt="upwork logo" class="icon" />
+				</a>
+			</div>
+		</div>
+
+		<!-- Selected Work -->
+		<div class="card col-span-2 row-span-2">
+			<h1>
+				<a href="/selected-work/" class="text-6xl flex flex-col">
+					<span>Selected</span>
+					<span>Work</span>
+				</a>
+			</h1>
+			<!-- Projects -->
+			<div class="flex-col self-end text-4xl font-light">
+				<h2>
+					<a href="" class="project">Project 1</a>
+				</h2>
+				<h2>
+					<a href="" class="project">Project 1</a>
+				</h2>
+				<h2>
+					<a href="" class="project">Project 1</a>
+				</h2>
+			</div>
+		</div>
+
+		<!-- Tech Stack -->
+		<div class="card col-span-2">
+			<h1 class="text-2xl">*Made with a Bleeding Edge Tech Stack</h1>
+			<!-- Icons -->
+			<div class="flex flex-row gap-2">
+				<img src="astro.svg" alt="astro logo" class="icon" />
+				<img src="tailwind.svg" alt="tailwind logo" class="icon" />
+			</div>
+		</div>
+	</div>
+	<script src="../scripts/script.js"></script>
+</MainLayout>

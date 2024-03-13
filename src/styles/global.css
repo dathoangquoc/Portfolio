@@ -2,72 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Heming';
+    src: url('../fonts/Heming-Variable.ttf');
+}
+
+body {
+    @apply text-white font-heming font-thin
+}
+
 .card {
-    @apply rounded-3xl min-h-fit p-8 flex justify-around 
-    bg-white/5 border border-white/10 relative overflow-hidden
+    @apply rounded-3xl min-h-fit p-6 gap-4 flex justify-between 
+    bg-white/5 border border-white/10 relative
 }
 
-.card * {
-    z-index: 1;
-}
-
-.card::after {
-    content: "";
-    position: absolute;
-    height: 1000%;
-    width: 1000%;
-    left: calc(var(--x, 0) * 1px - 400px);
-    top: calc(var(--y, 0) * 1px - 400px);
-    background: radial-gradient(
-        800px circle at 400px 400px,
-        rgba(255, 255, 255, 0.1),
-        transparent 40%
-    );
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 0;
-}
-
-.card:hover::after {
-    opacity: 1;
-}
 
 .icon {
     @apply mask mask-hexagon-2 w-12  
 }
 
 h1 {
-    @apply font-semibold text-2xl 
+    @apply font-heming font-light text-6xl 
 }
 
 .project {
     @apply hover:underline
 }
 
+.carousel-item {
+    @apply flex flex-col
+}
 
 /* Animation */
 @keyframes spiral {
     25% {
-        transform: translateY(-60px) scale(0.35, 0.35);
-    }
-    
-    35% {
-        transform: translateY(-35px) scale(0, 0);        
+        transform: translateY(-40px) scale(0.5, 0.5);
     }
 
     50% {
         transform: translateY(0px) scale(0, 0);
     }
 
-    65% {
-        transform: translateY(35px) scale(0, 0);
-    }
-
     75% {
-        transform: translateY(60px) scale(0.35, 0.35);
+        transform: translateY(40px) scale(0.5, 0.5);
     }
 }
 
 .spiralChar {
     animation: spiral 4s 1s infinite linear normal;
+    @apply text-3xl max-h-fit
 }
